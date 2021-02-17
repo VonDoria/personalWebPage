@@ -1,65 +1,57 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { FaLinkedin, FaGithub, FaReact, FaHtml5, FaCss3Alt, FaWhatsapp, FaNodeJs } from "react-icons/fa";
+import { DiJavascript } from "react-icons/di";
+import { SiGmail } from "react-icons/si";
+import style from '../styles/globals.module.css';
+import { useEffect } from "react";
 
 export default function Home() {
+
+  function typeWriter(element) {
+    console.log(element);
+    const textoArray = element.innerHTML.split('');
+    element.innerHTML = '';
+    textoArray.forEach((letra, index) => {
+      setTimeout(() => element.innerHTML += letra, 75 * index);
+    });
+  }
+
+  useEffect(() => {
+    typeWriter(document.querySelector('#work'));
+    setTimeout(typeWriter(document.querySelector('#live')), 2000);
+  }, []);
+
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+    <div className={style.container}>
+      <style jsx global>{`
+            body {
+              box-sizing: border-box;
+              padding: 0;
+              margin: 0;
+              background-color: #1f1f1f;
+            }
+      `}</style>
+      <div className={style.skills}>
+        <FaReact size={50} color="#1687a7" />
+        <FaNodeJs size={50} color="#54e346" />
+        <FaHtml5 size={50} color="#eb5e0b" />
+        <FaCss3Alt size={50} color="#1687a7" />
+        <DiJavascript size={50} color="#ffe227" />
+      </div>
+      <div className={style.image}>
+          <img src=""></img>
+      </div>
+      <div className={style.name}>
+          <h1>Ítalo Faria Dória</h1>
+          <p id="work">Web_developer_Jr | Jabil</p>
+          <p id="live">Contagem, MG, Brasil</p>
+      </div>
+      <div className={style.contact}>
+        <a href=""><FaGithub size={50} color="#FFF" /></a>
+        <a href=""><FaLinkedin size={50} color="#FFF" /></a>
+        <a href=""><FaWhatsapp size={50} color="#FFF" /></a>
+        <a href=""><SiGmail size={50} color="#FFF" /></a>    
+      </div>
     </div>
   )
 }
