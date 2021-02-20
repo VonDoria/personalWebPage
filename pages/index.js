@@ -7,7 +7,6 @@ import { useEffect } from "react";
 export default function Home() {
 
   function typeWriter(element) {
-    console.log(element);
     const textoArray = element.innerHTML.split('');
     element.innerHTML = '';
     textoArray.forEach((letra, index) => {
@@ -42,7 +41,7 @@ export default function Home() {
           <img src=""></img>
       </div>
       <div className={style.name}>
-          <h1>Ítalo Faria Dória</h1>
+          <h1><span>Ítalo</span><span>Faria</span><span>Dória</span></h1>
           <p id="work">Web_developer_Jr | Jabil</p>
           <p id="live">Contagem, MG, Brasil</p>
       </div>
