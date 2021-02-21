@@ -44,7 +44,7 @@ export default function Home() {
           <DiJavascript size={50} color="#ffe227" />
         </div>
         <div className={style.image}>
-          <Image alt="myFace" src="/../static/perfil.jpeg" width={750} height={1000} />
+          <Image alt="myFace" src="/perfil.jpeg" width={750} height={1000} />
         </div>
         <div className={style.name}>
             <h1><span>Ítalo</span><span>Faria</span><span>Dória</span></h1>
