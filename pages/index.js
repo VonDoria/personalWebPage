@@ -1,8 +1,10 @@
-import { FaLinkedin, FaGithub, FaReact, FaHtml5, FaCss3Alt, FaWhatsapp, FaNodeJs } from "react-icons/fa";
-import { DiJavascript } from "react-icons/di";
+import { FaLinkedin, FaGithub, FaReact, FaWhatsapp, FaNodeJs } from "react-icons/fa";
+import { DiJavascript, DiCss3, DiHtml5 } from "react-icons/di";
 import { SiGmail } from "react-icons/si";
 import style from '../styles/globals.module.css';
 import { useEffect } from "react";
+import Document, { Head } from 'next/document';
+import Image from 'next/image';
 
 export default function Home() {
 
@@ -15,42 +17,46 @@ export default function Home() {
   }
 
   useEffect(() => {
+    // document.title = 'Ítalo_Dória';
     typeWriter(document.querySelector('#work'));
     setTimeout(typeWriter(document.querySelector('#live')), 2000);
   }, []);
 
 
   return (
-    <div className={style.container}>
-      <style jsx global>{`
-            body {
-              box-sizing: border-box;
-              padding: 0;
-              margin: 0;
-              background-color: #1f1f1f;
-            }
-      `}</style>
-      <div className={style.skills}>
-        <FaReact size={50} color="#1687a7" />
-        <FaNodeJs size={50} color="#54e346" />
-        <FaHtml5 size={50} color="#eb5e0b" />
-        <FaCss3Alt size={50} color="#1687a7" />
-        <DiJavascript size={50} color="#ffe227" />
+      <div className={style.container}>
+        {/* <Head>
+          <link rel="icon" src="/../static/icon.png" />
+        </Head> */}
+        <style jsx global>{`
+              body {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                background-color: #1f1f1f;
+              }
+              `}</style>
+        <div className={style.skills}>
+          <FaReact size={50} color="#1687a7" />
+          <FaNodeJs size={50} color="#54e346" />
+          <DiHtml5 size={50} color="#eb5e0b" />
+          <DiCss3 size={50} color="#1687a7" />
+          <DiJavascript size={50} color="#ffe227" />
+        </div>
+        <div className={style.image}>
+          <Image id="perfil" alt="teste" src="/../static/perfil.jpeg" width={750} height={1000} />
+        </div>
+        <div className={style.name}>
+            <h1><span>Ítalo</span><span>Faria</span><span>Dória</span></h1>
+            <p id="work">Web_developer_Jr | Jabil</p>
+            <p id="live">Contagem, MG, Brasil</p>
+        </div>
+        <div className={style.contact}>
+          <a target="_blank" href="https://github.com/VonDoria" title="VonDoria"><FaGithub size={50} color="#FFF" /></a>
+          <a target="_blank" href="https://www.linkedin.com/in/%C3%ADtalo-faria-d%C3%B3ria-51a341193/" title="Ítalo Faria Dória"><FaLinkedin size={50} color="#FFF" /></a>
+          <a target="_blank" href="https://web.whatsapp.com/send?phone=5531989247157" title="(31)98924-7157"><FaWhatsapp size={50} color="#FFF" /></a>
+          <a target="_blank" href="mailto:italo.faria0@gmail.com" title="italo.faria0@gmail.com"><SiGmail size={50} color="#FFF" /></a>    
+        </div>
       </div>
-      <div className={style.image}>
-          <img src=""></img>
-      </div>
-      <div className={style.name}>
-          <h1><span>Ítalo</span><span>Faria</span><span>Dória</span></h1>
-          <p id="work">Web_developer_Jr | Jabil</p>
-          <p id="live">Contagem, MG, Brasil</p>
-      </div>
-      <div className={style.contact}>
-        <a href=""><FaGithub size={50} color="#FFF" /></a>
-        <a href=""><FaLinkedin size={50} color="#FFF" /></a>
-        <a href=""><FaWhatsapp size={50} color="#FFF" /></a>
-        <a href=""><SiGmail size={50} color="#FFF" /></a>    
-      </div>
-    </div>
-  )
+  );
 }

@@ -3,7 +3,7 @@
 .container
 {
     background-color: #1f1f1f;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
     display: grid;
     grid-template-rows: 1fr 200px 200px 1fr;
@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 1;
 }
 
 .skills svg
@@ -67,10 +68,16 @@
     width: 190px;
     height: 190px;
     border-radius: 50%;
-    background-color: #001aff;
+    background-color: #b9b9b9;
     overflow: hidden;
     transform: scale(0);
     animation: rise .7s ease-in-out 1s forwards;
+}
+
+.image div
+{
+    transform: translateY(100%);
+    animation: focus .7s ease-in-out 1s forwards;
 }
 
 .name
@@ -170,17 +177,20 @@
     0%{transform: scale(0);}
     50%{
         transform: scale(1.1);
-        box-shadow: 0px 0px 0px 0px #001aff;
+        /* box-shadow: 0px 0px 0px 0px #001aff; */
+        box-shadow: 0px 0px 0px 0px #b9b9b9;
         border: solid #1f1f1f 0px;
     }
     70%{
         transform: scale(1);
-        box-shadow: 0px 0px 0px 0px #001aff;
+        /* box-shadow: 0px 0px 0px 0px #001aff; */
+        box-shadow: 0px 0px 0px 0px #b9b9b9;
         border: solid #1f1f1f 0px;
     }
     100%{
         transform: scale(1);
-        box-shadow: 0px 0px 2px 4px #001aff;
+        /* box-shadow: 0px 0px 2px 4px #001aff; */
+        box-shadow: 0px 0px 170px 30px #b9b9b9;
         border: solid #1f1f1f 7px;
     }
 }
@@ -195,5 +205,17 @@
     100%{
         transform: translateY(0px);
         opacity: 1;
+    }
+}
+
+@keyframes focus
+{
+    0%{
+        transform: translateY(100%) rotateX(45deg);
+        /* opacity: 1; */
+    }
+    100%{
+        transform: translateY(0%) rotateX(0deg);
+        /* opacity: 1; */
     }
 }
