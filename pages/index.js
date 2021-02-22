@@ -3,7 +3,7 @@ import { DiJavascript, DiCss3, DiHtml5 } from "react-icons/di";
 import { SiGmail } from "react-icons/si";
 import style from '../styles/globals.module.css';
 import { useEffect } from "react";
-import Document, { Head } from 'next/document';
+import Head from 'next/head';
 import Image from 'next/image';
 
 export default function Home() {
@@ -17,7 +17,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // document.title = 'Ítalo_Dória';
     typeWriter(document.querySelector('#work'));
     setTimeout(typeWriter(document.querySelector('#live')), 2000);
   }, []);
@@ -25,9 +24,9 @@ export default function Home() {
 
   return (
       <div className={style.container}>
-        {/* <Head>
-          <link rel="icon" src="/../static/icon.png" />
-        </Head> */}
+        <Head>
+          {/* <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon" /> */}
+        </Head>
         <style jsx global>{`
               body {
                 box-sizing: border-box;
@@ -44,7 +43,7 @@ export default function Home() {
           <DiJavascript size={50} color="#ffe227" />
         </div>
         <div className={style.image}>
-          <Image alt="myFace" src="/../static/perfil.jpeg" width={750} height={1000} />
+          <Image alt="myFace" src="/static/perfil.jpeg" width={570} height={760} />
         </div>
         <div className={style.name}>
             <h1><span>Ítalo</span><span>Faria</span><span>Dória</span></h1>
