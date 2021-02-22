@@ -25,7 +25,8 @@ export default function Home() {
   return (
       <div className={style.container}>
         <Head>
-          {/* <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon" /> */}
+          <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon" />
+          <title>Ítalo_Dória</title>
         </Head>
         <style jsx global>{`
               body {
