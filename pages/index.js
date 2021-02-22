@@ -26,6 +26,7 @@ export default function Home() {
       <div className={style.container}>
         <Head>
           <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon" />
+          <meta name="theme-color" content="#1f1f1f" />
           <title>Ítalo_Dória</title>
         </Head>
         <style jsx global>{`
