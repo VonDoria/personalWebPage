@@ -11,7 +11,10 @@
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "^4.2.0"
+    "react-easyfullscreen": "^1.1.0",
+    "react-full-screen": "^1.0.1",
+    "react-icons": "^4.2.0",
+    "screenfull": "^5.1.0"
   },
   "devDependencies": {
     "next-images": "^1.7.0"
