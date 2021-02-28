@@ -41,13 +41,9 @@ export default function Home() {
   useEffect(() => {
     if(isMobile.any())
     {
-      setTimeout(async() => {
-        var element = document.querySelector('.container');
-        if (screenfull.isEnabled) {
-          await screenfull.request(element, {navigationUI: 'hide'});
-        }
-      }, 500);
-      // document.querySelector('body').requestFullscreen();
+      if (screenfull.isEnabled) {
+        document.querySelector('#container').addEventListener('click', () => screenfull.toggle());
+      }
     }
     typeWriter(document.querySelector('#work'));
     setTimeout(typeWriter(document.querySelector('#live')), 2000);
@@ -55,7 +51,7 @@ export default function Home() {
 
 
   return (
-    <div className={style.container}>
+    <div className={style.container} id="container">
       <Head>
         <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon" />
         <meta name="theme-color" content="#1f1f1f" />
