@@ -83,7 +83,7 @@ export default function Home() {
       <div className={style.contact}>
         <a target="_blank" href="https://github.com/VonDoria" title="VonDoria"><FaGithub size={50} color="#FFF" /></a>
         <a target="_blank" href="https://www.linkedin.com/in/%C3%ADtalo-faria-d%C3%B3ria-51a341193/" title="Ítalo Faria Dória"><FaLinkedin size={50} color="#FFF" /></a>
-        <a target="_blank" href="https://web.whatsapp.com/send?phone=5531989247157" title="(31)98924-7157"><FaWhatsapp size={50} color="#FFF" /></a>
+        <a target="_blank" href="https://web.whatsapp.com/send?phone=5531" title=""><FaWhatsapp size={50} color="#FFF" /></a>
         <a target="_blank" href="mailto:italo.faria0@gmail.com" title="italo.faria0@gmail.com"><SiGmail size={50} color="#FFF" /></a>    
       </div>
     </div>
